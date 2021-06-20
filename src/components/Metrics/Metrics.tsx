@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { data }from '../../data'
 
 const Container = styled.div`
     display: flex;
@@ -11,52 +12,24 @@ const Metric = styled.div`
     padding-left: 15px;
     border-left: 3px solid #EDEEF2;
     p {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         color: #B4B8C5;
+        margin: 0;
+    }
+    h3 {
+        font-size: 2.2rem;
+        font-weight: 500;
         margin: 0;
     }
 `;
 
-const metrics = [
-    {
-        id: 1,
-        title: 'Client number',
-        content: 68091604,
-    },
-    {
-        id: 2,
-        title: 'Consumption',
-        content: 414.8970004,
-    },
-    {
-        id: 3,
-        title: 'Dynamic price',
-        content: 477.131550459999,
-    },
-    {
-        id: 4,
-        title: 'Fraud level',
-        content: 1.1158631415241,
-    },
-    {
-        id: 5,
-        title: 'Voltage arrivage',
-        content: 239.790446841294,
-    },
-    {
-        id: 6,
-        title: 'Frequency',
-        content: 49.824345146379,
-    },
-];
-
 function Metrics() {
     return (
         <Container>
-            {metrics.map((metric) => (
+            {data[0].lastMonthData.map((metric) => (
               <Metric key={metric.id}>
                   <p>{metric.title}</p>
-                  <h3>{metric.content}</h3>
+                  <h3>{metric.content.toFixed(2)}</h3>
               </Metric>  
             ))}
         </Container>

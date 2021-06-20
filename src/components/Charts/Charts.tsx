@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { Line } from "react-chartjs-2";
 import { data } from '../../data';
+import { Data } from '../../data';
+
+interface ChartsProps {
+    device: keyof Data;
+}
+
 
 const ChartsContainer = styled.div`
     display: flex;
@@ -20,10 +26,10 @@ const ChartItem = styled.div`
     }
 `;
 
-function Charts() {
-    const labels = data[0].monthlyData.map(({ date }) => date);
-    const dynamicPrice = data[0].monthlyData.map(({ dynamicPrice }) => dynamicPrice);
-    const consumption = data[0].monthlyData.map(({ consumption }) => consumption);
+function Charts({ device }: ChartsProps) {
+    const labels = data[device].monthlyData.map(({ date }) => date);
+    const dynamicPrice = data[device].monthlyData.map(({ dynamicPrice }) => dynamicPrice);
+    const consumption = data[device].monthlyData.map(({ consumption }) => consumption);
 
     return (
         <>

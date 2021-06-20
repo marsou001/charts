@@ -1,6 +1,12 @@
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import { data } from '../../data';
+import { Data } from '../../data';
 
-function Map() {
+interface MapProps {
+    device: keyof Data;
+}
+
+function Map({ device }: MapProps) {
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY!,       
     });
@@ -9,10 +15,10 @@ function Map() {
         width: '74%',
         height: 350,
     }
-
+    
     const center = {
-        lat: 33.9601172,
-        lng: -6.8407772,
+        lat: data[device].constantData.latitude,
+        lng: data[device].constantData.longitude,
     }
 
     if (loadError) return <div>Error loading map</div>;

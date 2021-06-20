@@ -34,7 +34,12 @@ interface MonthlyData {
     dynamicPrice: number,
 }
 
-export const devices = [
+export interface Devices {
+    _id: number;
+    deviceID: keyof Data;
+}
+
+export const devices: Devices[] = [
     {
         _id: 2,
         deviceID: 'MAC000002',

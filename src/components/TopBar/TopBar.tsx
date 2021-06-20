@@ -1,15 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { devices } from '../../data';
-import { Data } from '../../data';
 
 interface TopBarProps {
     handleDeviceChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-}
-
-interface SelectFieldProps {
-    _id: number;
-    deviceID: keyof Data;
 }
 
 const Container = styled.div`
@@ -36,7 +30,7 @@ function TopBar({ handleDeviceChange }: TopBarProps) {
         <Container>
             <SearchField type='text' placeholder='Search' />
             <SelectField onChange={handleDeviceChange}>
-                {devices.map(({ _id, deviceID }: SelectFieldProps) => (
+                {devices.map(({ _id, deviceID }) => (
                     <option key={_id}>{deviceID}</option>
                 ))}
             </SelectField>

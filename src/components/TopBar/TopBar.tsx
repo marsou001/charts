@@ -1,5 +1,16 @@
+import React from "react";
 import styled from "styled-components";
-import { data } from '../../data';
+import { devices } from '../../data';
+import { Data } from '../../data';
+
+interface TopBarProps {
+    handleDeviceChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+interface SelectFieldProps {
+    _id: number;
+    deviceID: keyof Data;
+}
 
 const Container = styled.div`
     display: flex;
@@ -20,12 +31,12 @@ const SelectField = styled.select`
     color: #B4B8C5;
 `;
 
-function TopBar() {
+function TopBar({ handleDeviceChange }: TopBarProps) {
     return (
         <Container>
             <SearchField type='text' placeholder='Search' />
-            <SelectField>
-                {data.map(({ _id, deviceID }) => (
+            <SelectField onChange={handleDeviceChange}>
+                {devices.map(({ _id, deviceID }: SelectFieldProps) => (
                     <option key={_id}>{deviceID}</option>
                 ))}
             </SelectField>

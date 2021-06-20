@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { data }from '../../data'
+import { data }from '../../data';
+import { Data } from '../../data';
+
+interface MetricsProps {
+    device: keyof Data;
+}
 
 const Container = styled.div`
     display: flex;
@@ -23,10 +28,10 @@ const Metric = styled.div`
     }
 `;
 
-function Metrics() {
+function Metrics({ device }: MetricsProps) {
     return (
         <Container>
-            {data[0].lastMonthData.map((metric) => (
+            {data[device].lastMonthData.map((metric) => (
               <Metric key={metric.id}>
                   <p>{metric.title}</p>
                   <h3>{metric.content.toFixed(2)}</h3>

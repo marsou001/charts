@@ -1,5 +1,52 @@
-export const data = [
+export interface Data {
+    MAC000002: Device;
+    MAC000003: Device;
+}
+
+interface Device {
+    _id: number;
+    deviceID: string;
+    constantData: ConstantData;
+    lastMonthData: LastMonthData[];
+    monthlyData: MonthlyData[];
+}
+
+interface ConstantData {
+    clientNumber: number,
+    longitude: number,
+    latitude: number,
+    address: string,
+    tarification: string,
+}
+
+interface LastMonthData {
+    id: number;
+    title: string;
+    content: number;
+}
+
+interface MonthlyData {
+    id: number,
+    date: string,
+    longitude: number,
+    latitude: number,
+    consumption: number,
+    dynamicPrice: number,
+}
+
+export const devices = [
     {
+        _id: 2,
+        deviceID: 'MAC000002',
+    },
+    {
+        _id:32,
+        deviceID: 'MAC000003',
+    },
+];
+
+export const data = {
+    MAC000002: {
         _id: 2,
         deviceID: 'MAC000002',
         constantData: {
@@ -180,7 +227,7 @@ export const data = [
             },
         ]
     },
-    {
+    MAC000003: {
         _id: 3,
         deviceID: 'MAC000003',
         constantData: {
@@ -425,5 +472,5 @@ export const data = [
             },
         ]
     },     
-];
+};
 

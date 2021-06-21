@@ -1,6 +1,6 @@
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import { data } from '../../data';
-import { Data } from '../../data';
+import { Data } from '../../interfaces';
 
 interface MapProps {
     device: keyof Data;

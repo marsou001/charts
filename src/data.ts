@@ -1,43 +1,5 @@
-export interface Data {
-    MAC000002: Device;
-    MAC000003: Device;
-}
-
-interface Device {
-    _id: number;
-    deviceID: string;
-    constantData: ConstantData;
-    lastMonthData: LastMonthData[];
-    monthlyData: MonthlyData[];
-}
-
-interface ConstantData {
-    clientNumber: number,
-    longitude: number,
-    latitude: number,
-    address: string,
-    tarification: string,
-}
-
-interface LastMonthData {
-    id: number;
-    title: string;
-    content: number;
-}
-
-interface MonthlyData {
-    id: number,
-    date: string,
-    longitude: number,
-    latitude: number,
-    consumption: number,
-    dynamicPrice: number,
-}
-
-export interface Devices {
-    _id: number;
-    deviceID: keyof Data;
-}
+import { Devices } from './interfaces';
+import { Data } from './interfaces';
 
 export const devices: Devices[] = [
     {
@@ -45,12 +7,16 @@ export const devices: Devices[] = [
         deviceID: 'MAC000002',
     },
     {
-        _id:32,
+        _id: 3,
         deviceID: 'MAC000003',
+    },
+    {
+        _id: 4,
+        deviceID: 'MAC000004',
     },
 ];
 
-export const data = {
+export const data: Data = {
     MAC000002: {
         _id: 2,
         deviceID: 'MAC000002',
@@ -477,5 +443,226 @@ export const data = {
             },
         ]
     },     
+    MAC000004: {
+        _id: 4,
+        deviceID: 'MAC000004',
+        constantData: {
+            clientNumber: 33725676,
+            longitude: -6.8320288,
+            latitude: 33.9617651,
+            address: '12 Avenue Bir Kacem, Rabat, Morocco',
+            tarification: 'Usage domestique',
+        },
+        lastMonthData: [
+            {
+                id: 1,
+                title: 'Client number',
+                content: 31840401,
+            },
+            {
+                id: 2,
+                title: 'Consumption',
+                content: 47.0619999999999,
+            },
+            {
+                id: 3,
+                title: 'Dynamic price',
+                content: 54.1213,
+            },
+            {
+                id: 4,
+                title: 'Fraud level',
+                content: 1.10419906687402,
+            },
+            {
+                id: 5,
+                title: 'Voltage arrivage',
+                content: 239.888289676425,
+            },
+            {
+                id: 6,
+                title: 'Frequency',
+                content: 49.748844375963,
+            },
+        ],
+        monthlyData: [
+            {
+                id: 1,
+                date: "31/05/2012",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 35.3449999999999,
+                dynamicPrice: 40.64675,
+            },
+            {
+                id: 2,
+                date: "30/06/2012",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 46.6049999999999,
+                dynamicPrice: 53.5957499999999,
+            },
+            {
+                id: 3,
+                date: "31/07/2012",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 45.794,
+                dynamicPrice: 52.6631,
+            },
+            {
+                id: 4,
+                date: "31/08/2012",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 47.2339999999999,
+                dynamicPrice: 54.3191,
+            },
+            {
+                id: 5,
+                date: "30/09/2012",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 46.9039999999999,
+                dynamicPrice: 53.9396,
+            },
+            {
+                id: 6,
+                date: "31/10/2012",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 60.8329999999999,
+                dynamicPrice: 69.9579499999999,
+            },
+            {
+                id: 7,
+                date: "30/11/2012",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 55.6979999999999,
+                dynamicPrice: 64.0527,
+            },
+            {
+                id: 8,
+                date: "31/12/2012",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 62.4300000999999,
+                dynamicPrice: 71.794500115,
+            },
+            {
+                id: 9,
+                date: "31/01/2013",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 55.9679999999999,
+                dynamicPrice: 63.22294,
+            },
+            {
+                id: 10,
+                date: "28/02/2013",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 56.9749999999999,
+                dynamicPrice: 65.34037,
+            },
+            {
+                id: 11,
+                date: "31/03/2013",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 59.3419999999998,
+                dynamicPrice: 65.68141,
+            },
+            {
+                id: 12,
+                date: "30/04/2013",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 50.4299999999999,
+                dynamicPrice: 57.4561599999999,
+            },
+            {
+                id: 13,
+                date: "31/05/2013",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 49.961,
+                dynamicPrice: 57.12542,
+            },
+            {
+                id: 14,
+                date: "30/06/2013",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 51.879,
+                dynamicPrice: 59.3610899999999,
+            },
+            {
+                id: 15,
+                date: "31/07/2013",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 43.2739999999999,
+                dynamicPrice: 49.13049,
+            },
+            {
+                id: 16,
+                date: "31/08/2013",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 45.3619999999999,
+                dynamicPrice: 52.45237,
+            },
+            {
+                id: 17,
+                date: "30/09/2013",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 47.5999999999999,
+                dynamicPrice: 54.64052,
+            },
+            {
+                id: 18,
+                date: "31/10/2013",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 51.3969999999999,
+                dynamicPrice: 58.57838,
+            },
+            {
+                id: 19,
+                date: "30/11/2013",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 51.8949999999999,
+                dynamicPrice: 59.18144,
+            },
+            {
+                id: 20,
+                date: "31/12/2013",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 54.6639999999999,
+                dynamicPrice: 61.3359399999999,
+            },
+            {
+                id: 21,
+                date: "31/01/2014",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 54.136,
+                dynamicPrice: 62.2563999999999,
+            },
+            {
+                id: 22,
+                date: "28/02/2014",
+                longitude: -6.8320288,
+                latitude: 33.9617651,
+                consumption: 47.0619999999999,
+                dynamicPrice: 54.1213,
+            },
+        ]
+    },
 };
 

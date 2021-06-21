@@ -3,7 +3,7 @@ import Metrics from './components/Metrics/Metrics';
 import TopBar from './components/TopBar/TopBar';
 import Charts from './components/Charts/Charts';
 import Map from './components/Map/Map';
-import { Data } from './data';
+import { Data } from './interfaces';
 
 function App() {
   const [device, setDevice] = useState<keyof Data>('MAC000002');

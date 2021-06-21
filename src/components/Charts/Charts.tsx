@@ -1,26 +1,23 @@
 import styled from "styled-components";
 import { Line } from "react-chartjs-2";
 import { data } from '../../data';
-import { Data } from '../../data';
+import { Data } from '../../interfaces';
 
 interface ChartsProps {
     device: keyof Data;
 }
 
-
 const ChartsContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    div {
-        width: 23%;
-        height: 300px;
-        cursor: pointer;
-    }
 `;
 
 const ChartItem = styled.div`
     background-color: white;
-    border-radius: 12px;
+    width: 23%;
+        height: 320px;
+        border-radius: 12px;
+        cursor: pointer;
     h3 {
         margin: 5px 10px;
     }

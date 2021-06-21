@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { data }from '../../data';
-import { Data } from '../../data';
+import { Data } from '../../interfaces';
 
 interface MetricsProps {
     device: keyof Data;

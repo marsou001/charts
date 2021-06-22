@@ -8,13 +8,16 @@ import { Data } from './interfaces';
 function App() {
   const [device, setDevice] = useState<keyof Data>('MAC000002');
 
-  const handleDeviceChange = (e: React.ChangeEvent<HTMLSelectElement>) => setDevice(e.target.value as keyof Data);
+  const handleDeviceChange = (e: React.MouseEvent<HTMLUListElement>) => {
+    const target = e.target as HTMLLIElement;
+    setDevice(target.textContent as keyof Data);
+  };
 
   useEffect(() => setDevice('MAC000002'), []);
 
   return (
     <>
-      <TopBar handleDeviceChange={handleDeviceChange} />
+      <TopBar device={device} handleDeviceChange={handleDeviceChange} />
       <Metrics device={device} />
       <Charts device={device} />
       <Map device={device} />

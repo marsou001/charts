@@ -16,13 +16,24 @@ const SearchField = styled.input`
     color: #B4B8C5;
     background-color: #EDEEF2;
     padding: 10px 15px; 
-    border: none;   
+    border: 1px solid #B4B8C5;   
     border-radius: 3px;
     outline-color: #B4B8C5;
 `;
 
 const SelectField = styled.select`
     color: #B4B8C5;
+    background-color: transparent;
+    letter-spacing: 0.03rem;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+    :hover {
+        color: black;
+        transform: scale(1.1);
+    }
 `;
 
 function TopBar({ handleDeviceChange }: TopBarProps) {

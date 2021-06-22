@@ -137,9 +137,10 @@ function Charts({ device }: ChartsProps) {
                     <h3>Fraud level</h3>
                     <GaugeChart
                         id="gauge-chart-1"
-                        nrOfLevels={27}
+                        nrOfLevels={31}
                         percent={(fraudLevel ?? 0) / 3}
                         colors={['#6942D4', '#47E1C1']}
+                        arcWidth={0.23}
                         textColor='#000'
                         needleColor='#bbb'
                         needleBaseColor='#999'
@@ -151,9 +152,10 @@ function Charts({ device }: ChartsProps) {
                     <h3>Voltage arrivage</h3>
                 <GaugeChart
                         id="gauge-chart-2"
-                        nrOfLevels={27}
+                        nrOfLevels={31}
                         percent={(voltageArrivage ?? 0) / 500}
                         colors={['#6942D4', '#47E1C1']}
+                        arcWidth={0.23}
                         textColor='#000'
                         needleColor='#bbb'
                         needleBaseColor='#999'

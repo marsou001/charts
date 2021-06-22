@@ -34,7 +34,7 @@ function Metrics({ device }: MetricsProps) {
             {data[device].lastMonthData.map((metric) => (
               <Metric key={metric.id}>
                   <p>{metric.title}</p>
-                  <h3>{metric.content.toFixed(2)}</h3>
+                  <h3>{metric.content.toFixed(0)}</h3>
               </Metric>  
             ))}
         </Container>

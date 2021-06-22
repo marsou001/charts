@@ -42,6 +42,13 @@ const ChartItem = styled.div`
     }
 `;
 
+const TextUnderGauge = styled.p`
+    font-size: 3.0rem;
+    font-weight: 600;
+    text-align: center;
+    transform: translateY(-175px);
+`;
+
 const chartStyle = {
     width: '100%',
     height: '100%',
@@ -141,12 +148,13 @@ function Charts({ device }: ChartsProps) {
                         percent={(fraudLevel ?? 0) / 3}
                         colors={['#6942D4', '#47E1C1']}
                         arcWidth={0.23}
-                        textColor='#000'
+                        hideText={true}
                         needleColor='#bbb'
                         needleBaseColor='#999'
                         formatTextValue={() => fraudLevel?.toFixed(0).toString() ?? ''}                        
                         style={chartStyle}
                     />
+                    <TextUnderGauge>{fraudLevel?.toFixed(0)}</TextUnderGauge>
                 </ChartItem>
                 <ChartItem>
                     <h3>Voltage arrivage</h3>
@@ -156,12 +164,13 @@ function Charts({ device }: ChartsProps) {
                         percent={(voltageArrivage ?? 0) / 500}
                         colors={['#6942D4', '#47E1C1']}
                         arcWidth={0.23}
-                        textColor='#000'
+                        hideText={true}
                         needleColor='#bbb'
                         needleBaseColor='#999'
                         formatTextValue={() => voltageArrivage?.toFixed(0).toString() ?? ''}                        
                         style={chartStyle}
                     />
+                    <TextUnderGauge>{voltageArrivage?.toFixed(0)}</TextUnderGauge>
                 </ChartItem>
             </ChartsContainer>
         </>

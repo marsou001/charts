@@ -42,6 +42,9 @@ function Charts({ device }: ChartsProps) {
         ({ consumption }) => consumption
     );
 
+    const fraudLevel = data[device].lastMonthData.find((p) => p.title === 'Fraud level')?.content;
+    const voltageArrivage = data[device].lastMonthData.find((p) => p.title === 'Voltage arrivage')?.content;
+
     return (
         <>
             <h1>Placeholder for Charts</h1>
@@ -120,12 +123,12 @@ function Charts({ device }: ChartsProps) {
                     <GaugeChart
                         id="gauge-chart-1"
                         nrOfLevels={27}
-                        percent={0.53}
+                        percent={(fraudLevel ?? 0) / 3}
                         colors={['#6942D4', '#47E1C1']}
                         textColor='#000'
                         needleColor='#bbb'
                         needleBaseColor='#999'
-                        formatTextValue={() => data[device].lastMonthData.find((p) => p.title === 'Fraud level')?.content.toFixed(3).toString() ?? ''}                        
+                        formatTextValue={() => fraudLevel?.toFixed(3).toString() ?? ''}                        
                         style={chartStyle}
                     />
                 </ChartItem>
@@ -134,12 +137,12 @@ function Charts({ device }: ChartsProps) {
                 <GaugeChart
                         id="gauge-chart-2"
                         nrOfLevels={27}
-                        percent={0.33}
+                        percent={(voltageArrivage ?? 0) / 500}
                         colors={['#6942D4', '#47E1C1']}
                         textColor='#000'
                         needleColor='#bbb'
                         needleBaseColor='#999'
-                        formatTextValue={() => data[device].lastMonthData.find((p) => p.title === 'Voltage arrivage')?.content.toFixed(3).toString() ?? ''}                        
+                        formatTextValue={() => voltageArrivage?.toFixed(3).toString() ?? ''}                        
                         style={chartStyle}
                     />
                 </ChartItem>

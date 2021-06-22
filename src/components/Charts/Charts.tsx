@@ -8,6 +8,21 @@ interface ChartsProps {
     device: keyof Data;
 }
 
+const Header = styled.h1`
+    font-size: 2.3rem;
+    font-family: lora, sans-serif;
+    font-weight: 700;
+    margin-bottom: 0;
+`;
+
+const TextHeader = styled.p`
+    color: #B4B8C5;    
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 5px;
+`;
+
 const ChartsContainer = styled.div`
     display: flex;
     justify-content: space-between;
@@ -47,8 +62,8 @@ function Charts({ device }: ChartsProps) {
 
     return (
         <>
-            <h1>Placeholder for Charts</h1>
-            <p>Placeholder under text</p>
+            <Header>Placeholder for Charts</Header>
+            <TextHeader>Placeholder under text</TextHeader>
             <ChartsContainer>
                 <ChartItem>
                     <h3>Consumption</h3>

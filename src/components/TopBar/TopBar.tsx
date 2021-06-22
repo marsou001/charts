@@ -22,6 +22,9 @@ const SearchField = styled.input`
     border: 1px solid #B4B8C5;   
     border-radius: 3px;
     outline-color: #B4B8C5;
+    ::placeholder {
+        color: #B4B8C5;
+    }
 `;
 
 const SelectFieldContainer = styled.div`

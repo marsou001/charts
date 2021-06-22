@@ -144,7 +144,7 @@ function Charts({ device }: ChartsProps) {
                         textColor='#000'
                         needleColor='#bbb'
                         needleBaseColor='#999'
-                        formatTextValue={() => fraudLevel?.toFixed(3).toString() ?? ''}                        
+                        formatTextValue={() => fraudLevel?.toFixed(0).toString() ?? ''}                        
                         style={chartStyle}
                     />
                 </ChartItem>
@@ -159,7 +159,7 @@ function Charts({ device }: ChartsProps) {
                         textColor='#000'
                         needleColor='#bbb'
                         needleBaseColor='#999'
-                        formatTextValue={() => voltageArrivage?.toFixed(3).toString() ?? ''}                        
+                        formatTextValue={() => voltageArrivage?.toFixed(0).toString() ?? ''}                        
                         style={chartStyle}
                     />
                 </ChartItem>
